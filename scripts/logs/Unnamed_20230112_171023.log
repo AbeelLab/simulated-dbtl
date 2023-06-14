@@ -1,0 +1,2 @@
+2023-01-12 17:10:23,800 - Unnamed - WARNING - Non integer stoichiometries found ['LMPD_biomass_c_17_462'] change to integer for linear dependencies
+2023-01-12 17:10:24,526 - Unnamed - WARNING - Non integer stoichiometries found ['LMPD_biomass_c_17_462'] change to integer for linear dependencies
