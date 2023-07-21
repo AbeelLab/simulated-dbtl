@@ -8,19 +8,25 @@ This Github repository contains all functions, models, and scripts to reproduce 
 ### Required python packages
 1. Skimpy (https://github.com/EPFL-LCSB/SKiMpy)
 2.  pyTFA (https://github.com/EPFL-LCSB/pytfa)
-3.  Sklearn (https://scikit-learn.org/stable/)
+3.  sklearn (https://scikit-learn.org/stable/)
 4.  scikit-optimize (https://scikit-optimize.github.io/stable/)
 5. scipy (https://scipy.org/)
-6. itertools
+6. Itertools
 
 ### Scripts (~/scripts/ directory): 
 
 .PY SCRIPTS
 
-1. 1210222_combinatorial_space.py: simulates the combinatorial space of the pathway presented in the paper. This is required when you want to calculate the top 100 producers, as a metric.\
+1. 1210222_combinatorial_space.py: simulates the combinatorial design space of the pathway presented in the paper. This script is required to get all possible combinatorial designs, which is required when you want to calculate the top 100 producers, as a metric. Output of this script is also stored in "data/combinatorial_space_pathwayA.csv. \
 --> Enzymes considered: A-G\
---> Enzyme levels (promoters strengths): [0.25,0.5,1,1.5,2,4]\
-2. Bayes_comb_scenario_sim_intersect.py: calculates the intersection between the top 100 prediction, with Bayesian hyperparameter optimization. Results shown in figure 5.
+--> Enzyme levels (promoters strengths): [0.25,0.5,1,1.5,2,4]
+2. Bayes_comb_scenario_sim_intersect.py: calculates the intersection of the top 100 prediction, with Bayesian hyperparameter optimization. Three different scenarios are Results shown in figure 5. For this script, the following things need to be specified through the command lines:\
+--> N_designs: the number of strain designs used in the training set\
+--> scenario: for now three choices: "equal","radical","non-radical". These correspond to the training set biases reported in the paper.\
+--> noise_model: "homoschedastic" or "heteroschedastic" \
+--> noise_percentage: if not set, will be 0.
+
+
 3. Bayes_comb_scenario_sim_r2.py: calculates the r2 value, with Bayesian hyperparameter optimization. Results shown in figure 5.
 4. comb_scenario_sim_intersect.py: comparison of ML methods for different sampling biases, intersection score of top 100. Results shown in figure 4
 --> Input: Number of designs, number of runs
