@@ -56,7 +56,7 @@ from sklearn.ensemble import  AdaBoostRegressor
 from scipy.stats import linregress
 
 
-# functions
+# Simulates all the designs and calculates the relative flux with respect to initial strain
 def scenario_simulation(designs,kmodel,sol_wt,parameter_values,cart):
     """Simulate a scenario based on the design list
     Input: Vmax Design List, Cartesian Design List,kmodel
@@ -130,12 +130,12 @@ filenames={
     "batch_file":"models/single_species.yaml",
     "batch_kmodel":"models/kin_varma.yml"}
 
-#load kinetic model and get parameter values
+#Load kinetic model and get parameter values
 kmodel,ref_concentrations,tmodel=sf.setup_ode_system(filenames['kmodel'],filenames['tmodel'],filenames['ref_solution'])
 parameter_values = {p.symbol:p.value for p in kmodel.parameters.values()}
 parameter_values = ParameterValues(parameter_values, kmodel)
 
-#function in the skimpy package for retrieving the fluxes
+#unction in the skimpy package for retrieving the fluxes
 flux_fun = make_flux_fun(kmodel, QSSA)
 
 
@@ -152,19 +152,21 @@ enz_names=["vmax_forward_Enzyme_A","vmax_forward_Enzyme_B","vmax_forward_Enzyme_
 perturb_range=[0.25,0.5,1,1.5,2,4]
 
 
-#perturb_range=[1,1.1,1.2]
-#for the kinetic model
+
+# Generate perturbation scheme for the kinetic model
 designs,cart=sf.generate_perturbation_scheme(enz_names,perturb_range) 
+
+# Initialize lists for storing simulation results
 rel_list=[]
 rel_flux_list=[]
 vmax_list=[]
 
 
-#test_met,test_flux,test_vmax,test_set_simulation=scenario_simulation(test_set_designs,kmodel,sol_wt,parameter_values,cart_test)
+# Perform scenario simulation
 comb_met,comb_flux,comb_vmax, comb_cart=scenario_simulation(designs,kmodel,sol_wt,parameter_values,cart)
 
-#this has a bug
 
+# Save simulation results to CSV files
 pd.DataFrame(comb_met).to_csv("results/combinatorial_space/comb_met.csv")
 pd.DataFrame(comb_flux).to_csv("results/combinatorial_space/comb_flux.csv")
 pd.DataFrame(comb_vmax).to_csv("results/combinatorial_space/comb_cart.csv")
