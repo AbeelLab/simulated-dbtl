@@ -112,7 +112,6 @@ python3 DBTL_cycle_cost_experiment_1601.py GradientBoostingRegressor 2
 7. Table 1: DBTL_cycle_cost_experiment_1601.py
 
 
-### References
 
 
 
