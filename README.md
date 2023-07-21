@@ -26,9 +26,9 @@ This Github repository contains all functions, models, and scripts to reproduce 
 --> noise_model: "homoschedastic" or "heteroschedastic".\
 --> noise_percentage: if not set, will be 0.
 
-'''
-print("ye")
-'''
+```{r, engine='python', count_lines}
+wc -l en_US.twitter.txt
+```
 3. Bayes_comb_scenario_sim_r2.py: calculates the r2 value, with Bayesian hyperparameter optimization. Results shown in figure 5. Three different scenarios are shown in figure 5. For this script, the following things need to be specified through the command lines:\
 --> N_designs: the number of strain designs used in the training set.\
 --> scenario: for now three choices: "equal","radical","non-radical". These correspond to the training set biases reported in the paper.\
