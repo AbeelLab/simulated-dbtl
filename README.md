@@ -21,10 +21,10 @@ This Github repository contains all functions, models, and scripts to reproduce 
 --> Enzymes considered: A-G\
 --> Enzyme levels (promoters strengths): [0.25,0.5,1,1.5,2,4]
 
-2. comb_scenario_sim_intersect.py: comparison of ML methods for different sampling biases, intersection score of top 100. Results shown in figure 4. Without Bayesian hyperparameter optimization.
+2. comb_scenario_sim_intersect.py: comparison of ML methods for different sampling biases, intersection score of top 100. Results shown in figure 4. Without Bayesian hyperparameter optimization.\
 --> Number of designs\
 --> scenario:for now three choices: "equal","radical","non-radical".\
---> n_runs: number of runs\
+--> n_runs: number of runs
 
 Example:
 
@@ -32,10 +32,10 @@ Example:
 python3 comb_scenario_sim_intersect.py 50 equal 20 
 ```
 
-3. comb_scenario_sim_r2.py: comparison of ML methods for different training set sizes, r2 value. Results shown in figure 4.
+3. comb_scenario_sim_r2.py: comparison of ML methods for different training set sizes, r2 value. Results shown in figure 4.\
 --> Number of designs\
 --> scenario:for now three choices: "equal","radical","non-radical".\
---> n_runs: number of runs\
+--> n_runs: number of runs
 
 
 Example:
