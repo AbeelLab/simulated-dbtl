@@ -68,7 +68,14 @@ python3 Bayes_comb_scenario_sim_r2.py 50 equal 20 homoschedastic 0.04
 ```
 
 
-6. DBTL_cycle_cost_experiment_1601.py: script to get the results of table 1, DBTL cycles strategies. Note the variable grid, which contains the number of samples used per cycle. 
+6. DBTL_cycle_cost_experiment_1601.py: script to get the results of table 1, DBTL cycles strategies. Note the variable grid, which contains the number of samples used per cycle. \
+--> Method: "GradientBoostingRegressor","RandomForestRegressor","SGD_Regressor","MLP_regressor"
+--> Strategies: index. In the script, there is a variable "grid" which has a number of predefined sampling strategies. Index wil select grid[:,index] from this list to be simulated. 
+
+Example
+```{r, engine='python', count_lines}
+python3 DBTL_cycle_cost_experiment_1601.py GradientBoostingRegressor 2
+```
 
 .IPYNB SCRIPTS
 
