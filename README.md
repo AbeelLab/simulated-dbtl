@@ -2,7 +2,7 @@
 
 
 This Github repository contains all functions, models, and scripts to reproduce results in the article 
-"Simulated Design-Build-Test-Learn Cycles for Consistent Comparison of Machine Learning Methods in Metabolic Engineering". If you have any questions on the code, feel free to contact us. 
+"Simulated Design-Build-Test-Learn Cycles for Consistent Comparison of Machine Learning Methods in Metabolic Engineering".
 
 
 ### Required python packages
