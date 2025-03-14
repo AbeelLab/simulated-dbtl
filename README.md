@@ -4,6 +4,8 @@
 This Github repository contains all functions, models, and scripts to reproduce results in the article 
 "Simulated Design-Build-Test-Learn Cycles for Consistent Comparison of Machine Learning Methods in Metabolic Engineering".
 
+If you want to simply reproduce the experiments as described in the paper, use the code below. If you want
+to use simulated DBTL cycles using your own kinetic models, we recommend that you use [jaxkineticmodel](https://abeellab.github.io/jaxkineticmodel/simulated-DBTL/)
 
 ### Required python packages
 1. Skimpy (https://github.com/EPFL-LCSB/SKiMpy)
